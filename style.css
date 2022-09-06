@@ -39,7 +39,7 @@ button:active {
 /* todo list styles */
 .container {
   width: 100%;
-  max-width: 320px;
+  max-width: 350px;
   min-width: 200px;
   margin: 100px auto;
   padding: 1em;
@@ -57,6 +57,7 @@ button:active {
   outline: none;
   border-radius: 10px;
   background: none;
+  font-size: inherit;
   font-family: inherit;
   color: inherit;
 }
@@ -80,6 +81,7 @@ button:active {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .clear-completed {
+  font-size: inherit;
   font-weight: 500;
   color: inherit;
 }
