@@ -105,7 +105,7 @@ button:active {
 }
 .custom-checkbox {
   width: 1.25em;
-  height: 1.21em;
+  height: 1.25em;
   flex-shrink: 0;
   border: 2px solid var(--gray);
   border-radius: 50%;
