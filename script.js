@@ -56,6 +56,7 @@ function deleteTask(id) {
 
 function editTask(id) {
   taskInput.value = todos[id].name;
+  taskInput.focus();
   editedId = id;
   isEdited = true;
 }
