@@ -1,39 +1,48 @@
 const taskForm = document.querySelector('.new-task'),
   taskInput = document.querySelector('.new-task input'),
   taskList = document.querySelector('.tasks'),
-  clearCompleted = document.querySelector('.clear-completed');
+  completed = document.querySelector('.completed-tasks');
+  clearCompleted = document.querySelector('.clear-completed'),
+  showCompleted = document.querySelector('.show-completed');
 let todos = JSON.parse(localStorage.getItem('todo-list')),
   editedId,
   isEdited = false;
-
+  
 function showTodo() {
   let todo = '';
+  let completedTodo = '';
   todos?.forEach((item, i) => {
     let isChecked = todos[i].status == 'completed' ? 'checked' : '';
-    todo += `<li class="task">
-                <label for="${i}" class="task-body">
-                  <input type="checkbox" id="${i}" class="checkbox" onclick='updateStatus(this,${i})' ${isChecked}>
-                  <div class="custom-checkbox">
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                  <p class="task-text">${item.name}</p>
-                </label>
-                <div class="task-menu">
-                  <i class="fa-solid fa-ellipsis-vertical" onclick='showMenu(this)'></i>
-                  <ul class="menu-list">
-                    <li class="task-btn edit" onclick='editTask(${i})'>
-                      <i class="fa-solid fa-pen"></i>
-                      Edit
-                    </li>
-                    <li class="task-btn delete" onclick='deleteTask(${i})'>
-                      <i class="fa-solid fa-trash"></i>
-                      Delete
-                    </li>
-                  </ul>
-                </div>
-              </li>`;
+    let taskContent = `<li class="task">
+                        <label for="${i}" class="task-body">
+                          <input type="checkbox" id="${i}" class="checkbox" onclick='updateStatus(this,${i})' ${isChecked}>
+                          <div class="custom-checkbox">
+                            <i class="fa-solid fa-check"></i>
+                          </div>
+                          <p class="task-text">${item.name}</p>
+                        </label>
+                        <div class="task-menu">
+                          <i class="fa-solid fa-ellipsis-vertical" onclick='showMenu(this)'></i>
+                          <ul class="menu-list">
+                            <li class="task-btn edit" onclick='editTask(${i})'>
+                              <i class="fa-solid fa-pen"></i>
+                              Edit
+                            </li>
+                            <li class="task-btn delete" onclick='deleteTask(${i})'>
+                              <i class="fa-solid fa-trash"></i>
+                              Delete
+                            </li>
+                          </ul>
+                        </div>
+                      </li>`
+    if(todos[i].status == 'pending') {
+      todo += taskContent;
+    } else {
+      completedTodo += taskContent;
+    }
   });
   taskList.innerHTML = todo;
+  completed.innerHTML = completedTodo;
 }
 
 showTodo();
@@ -65,8 +74,13 @@ function updateStatus(task, id) {
   task.checked
     ? (todos[id].status = 'completed')
     : (todos[id].status = 'pending');
+  setTimeout(showTodo, 350);
   localStorage.setItem('todo-list', JSON.stringify(todos));
 }
+
+showCompleted.addEventListener('click', () => {
+  showCompleted.classList.toggle('show-completed-active');
+})
 
 clearCompleted.addEventListener('click', () => {
   todos = todos?.filter((item) => item.status == 'pending');
