@@ -164,14 +164,14 @@ button:active {
   cursor: pointer;
   color: inherit;
 }
-.fa-angle-right {
+.fa-angle-down {
   margin-right: 1em;
 }
 .completed-tasks {
   display: none;
 }
-.show-completed-active > .fa-angle-right {
-  transform: rotate(90deg);
+.show-completed-active > .fa-angle-down {
+  transform: rotate(180deg);
 }
 .show-completed-active + .completed-tasks {
   display: block;
