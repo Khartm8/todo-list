@@ -176,3 +176,7 @@ button:active {
 .show-completed-active + .completed-tasks {
   display: block;
 }
+.completed-count {
+  margin-left: .5em;
+  color: inherit;
+}
