@@ -123,16 +123,19 @@ button:active {
   color: var(--primary);
 }
 .checkbox:checked ~ .task-text {
-  text-decoration: line-through var(--primary);
+  text-decoration: line-through;
+  text-decoration-color: var(--primary);
+  -webkit-text-decoration: line-through;
+  -webkit-text-decoration-color: var(--primary);
   opacity: 0.75;
 }
 .task-menu {
   position: relative;
   cursor: pointer;
-  padding-left: 0.75em;
 }
 .fa-ellipsis-vertical {
   line-height: 1;
+  padding-left: .7em;
 }
 .menu-list {
   width: 100px;
