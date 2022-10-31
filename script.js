@@ -23,7 +23,7 @@ function showTodo() {
                         <p class="task-text">${item.name}</p>
                       </label>
                       <div class="task-menu">
-                        <i class="fa-solid fa-ellipsis-vertical" onclick='showMenu(this)'></i>
+                        <i class="fa-solid fa-ellipsis" onclick='showMenu(this)'></i>
                         <ul class="menu-list">
                           <li class="task-btn edit" onclick='editTask(${i})'>
                             <i class="fa-solid fa-pen"></i>
