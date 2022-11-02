@@ -133,9 +133,13 @@ button:active {
   position: relative;
   cursor: pointer;
 }
-.fa-ellipsis {
-  font-size: 1.25em;
+.fa-ellipsis-vertical {
+  font-size: 1.15em;
   line-height: 1;
+  padding-left: 1em;
+}
+.fa-ellipsis-vertical:active {
+  background: #1c599810;
 }
 .menu-list {
   width: 100px;
