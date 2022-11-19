@@ -62,9 +62,6 @@ button:active {
   font-size: inherit;
   color: inherit;
 }
-.new-task input::placeholder {
-  font-weight: 500;
-}
 .new-task input:focus {
   border: 1px solid var(--primary);
 }
