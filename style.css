@@ -53,7 +53,7 @@ button:active {
 .new-task input {
   order: 1;
   flex-grow: 1;
-  padding: 0.5em 0.75em;
+  padding: 7px 10px;
   border: 1px solid transparent;
   outline: none;
   border-radius: 7px;
