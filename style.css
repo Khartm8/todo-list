@@ -52,7 +52,7 @@ button:active {
 }
 .new-task input {
   order: 1;
-  flex-grow: 1;
+  width: calc(100% - 25px);
   padding: 7px 10px;
   border: 1px solid transparent;
   outline: none;
