@@ -94,10 +94,10 @@ clearCompleted.addEventListener('click', () => {
 
 function completedCount() {
   let completed = todos?.filter((item) => item.status == 'completed');
-  if (completed.length >= 1) {
-    completedCounter.textContent = ` (${completed.length})`;
+  if (completed?.length >= 1) {
+    completedCounter.innerHTML = ` (${completed.length})`;
   } else {
-    completedCounter.textContent = '';
+    completedCounter.innerHTML = '';
   }
 }
 
