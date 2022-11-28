@@ -44,6 +44,7 @@ function showTodo() {
   });
   taskList.innerHTML = todo;
   completedList.innerHTML = completedTodo;
+  completedCount();
 }
 
 showTodo();
@@ -89,7 +90,6 @@ clearCompleted.addEventListener('click', () => {
   todos = todos?.filter((item) => item.status == 'pending');
   localStorage.setItem('todo-list', JSON.stringify(todos));
   showTodo();
-  completedCount();
 });
 
 function completedCount() {
